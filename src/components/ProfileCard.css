@@ -1,0 +1,53 @@
+/* Animation scale au survol de la carte entière */
+.hoverscale {
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s;
+}
+.hoverscale:hover,
+.hoverscale:focus {
+  transform: scale(1.045);
+  box-shadow: 0 8px 32px rgba(25, 118, 210, 0.13);
+  z-index: 2;
+}
+.profilecardicon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.profilecardiconwrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+}
+
+/* Features list styling */
+.profilecardfeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.2rem 0;
+  width: 100%;
+}
+.profilecardfeature {
+  font-size: 1rem;
+  color: #1976d2;
+  margin-bottom: 0.4rem;
+  padding-left: 1.2em;
+  position: relative;
+}
+.profilecardfeature::before {
+  content: "✓";
+  color: #1976d2;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+.profilecarddesc {
+  font-size: 1rem;
+  color: #222;
+  margin-bottom: 1.1rem;
+  text-align: center;
+  padding: 1.2rem 1.5rem;
+}

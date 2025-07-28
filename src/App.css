@@ -1,0 +1,170 @@
+/* Animations d'apparition au scroll */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.fade-in.visible {
+  font-family: "Inter", "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #213547;
+  /* background supprimé pour ne pas écraser le background-color de .hero */
+  transform: translateY(50px);
+  transition: opacity 0.7s, transform 0.7s;
+}
+.slide-up.visible {
+  opacity: 1;
+  transform: none;
+}
+.zoom-in {
+  font-family: "Roboto Slab", "Merriweather", serif;
+  color: #1a237e;
+  .zoom-in.visible {
+    opacity: 1;
+    transform: scale(1);
+    background: #1976d2;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+    border: 2px solid #1976d2;
+  }
+  .hover-scale:hover {
+    background: #ffd700;
+    color: #1a237e;
+    border-color: #ffd700;
+    box-shadow: 0 4px 18px rgba(106, 130, 251, 0.18);
+  }
+  .shadow-lift {
+    transition: box-shadow 0.18s;
+  }
+  .shadow-lift:hover,
+  .shadow-lift:focus-visible {
+    box-shadow: 0 8px 24px rgba(106, 130, 251, 0.22);
+    .btn-animate {
+      transition: background 0.18s, color 0.18s, box-shadow 0.18s,
+        transform 0.18s;
+      background: #1a237e;
+      color: #fff;
+    }
+    .btn-animate:focus-visible {
+      background: #6a82fb;
+      color: #ffd700;
+      box-shadow: 0 2px 12px rgba(106, 130, 251, 0.18);
+      transform: translateY(-2px) scale(1.03);
+      text-decoration: underline;
+    }
+  }
+
+  /* Animation compteur chiffres clés */
+  .chiffre__value {
+    transition: color 0.3s, font-size 0.3s;
+    will-change: text;
+  }
+  /* Accessibilité : focus visible sur liens et boutons */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid #6a82fb;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px #ffb34733;
+  }
+  #root {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /* Typographie globale */
+  body {
+    font-family: "Baloo 2", "Nunito", "Quicksand", "Poppins", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #222;
+    background: #f8fafc;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Baloo 2", "Nunito", "Quicksand", "Poppins", Arial, sans-serif;
+    font-weight: 800;
+    color: #6a82fb;
+    margin-bottom: 0.7em;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  .subtitle,
+  .section__subtitle {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 1.2em;
+  }
+
+  p,
+  li,
+  .desc,
+  .faq__answer,
+  .actualite__resume,
+  .avantages__desc {
+    font-family: "Nunito", "Quicksand", "Poppins", Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #222;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #fff;
+  }
+
+  .logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+  }
+  .logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
+  .logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+  }
+
+  @keyframes logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+      animation: logo-spin infinite 20s linear;
+    }
+  }
+
+  .card {
+    padding: 2em;
+  }
+
+  .read-the-docs {
+    color: #888;
+  }
+}

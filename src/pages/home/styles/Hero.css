@@ -1,0 +1,156 @@
+/* HERO SECTION - STYLES */
+/* Layout principal de la section Hero */
+.hero {
+  width: 100%;
+  display: flex;
+  gap: 3rem;
+  padding: 3.5rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 12px 48px rgba(25, 118, 210, 0.18);
+  -webkit-backdrop-filter: blur(32px) saturate(220%);
+  backdrop-filter: blur(32px) saturate(220%);
+  border: 2px solid rgba(255, 255, 255, 0.38);
+}
+
+/* Partie gauche : contenu texte */
+.herocontent {
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  backdrop-filter: blur(24px) saturate(200%);
+  border: 2px solid rgba(255, 255, 255, 0.32);
+  padding: 2rem 1.5rem;
+  margin: 0;
+  margin-left: 5rem;
+}
+
+/* Badge certification */
+.herobadge {
+  background: rgba(255, 255, 255, 0.08);
+  color: #234e70;
+  font-weight: 700;
+  padding: 0.4rem 1.2rem;
+  border-radius: 2rem;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.14);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  backdrop-filter: blur(12px) saturate(180%);
+  border: 2px solid rgba(255, 255, 255, 0.28);
+  cursor: pointer;
+}
+
+/* Titre principal */
+.herotitle {
+  font-family: "Poppins", "Montserrat", "Segoe UI", Arial, sans-serif;
+  font-size: 2.7rem;
+  font-weight: 800;
+  color: #234e70;
+  letter-spacing: 1.2px;
+  margin-bottom: 1.1rem;
+  line-height: 1.13;
+  text-shadow: 0 2px 8px rgba(25, 118, 210, 0.06);
+}
+
+/* Sous-titre */
+.herosubtitle {
+  font-family: "Montserrat", "Segoe UI", Arial, sans-serif;
+  font-size: 1.18rem;
+  color: #234e70cc;
+  margin-bottom: 2.1rem;
+  line-height: 1.6;
+  font-weight: 500;
+  max-width: 420px;
+}
+
+/* Bouton principal */
+.herocta {
+  font-size: 1.13rem;
+  padding: 0.95rem 2.2rem;
+  color: #0d2e47;
+  background: rgba(103, 99, 99, 0.04);
+  border: 0px solid rgba(255, 255, 255, 0.6);
+  border-radius: 2rem;
+  font-weight: 700;
+  box-shadow: 0.5px 1px 2px 0.5px rgba(128, 131, 133, 0.447);
+  -webkit-backdrop-filter: blur(48px) saturate(300%);
+  backdrop-filter: blur(48px) saturate(300%);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+.herocta:hover {
+  color: #1976d2;
+  transform: translateY(-2px) scale(1.12);
+}
+
+/* Partie droite : image */
+.heroimagecontainer {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heroimage {
+  max-height: 320px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  animation: hero-bounce 3s ease-in-out infinite;
+  cursor: pointer;
+}
+
+@keyframes hero-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(-8px);
+  }
+  20% {
+    transform: translateY(-14px);
+  }
+  28% {
+    transform: translateY(-16px);
+  }
+  36% {
+    transform: translateY(-14px);
+  }
+  44% {
+    transform: translateY(-8px);
+  }
+  52% {
+    transform: translateY(-2px);
+  }
+  60% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(0);
+  }
+}
+
+/* Indicateur de scroll */
+.heroscrollindicator {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-100%);
+}
+.scrollarrow {
+  font-size: 2.2rem;
+  color: #fc5c7d;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}

@@ -1,0 +1,99 @@
+/* ActualitesSection.css */
+.actualites {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 40px rgba(25, 118, 210, 0.1);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  padding: 3.5rem 2rem 2.5rem 2rem;
+  box-sizing: border-box;
+  color: #1976d2;
+  cursor: pointer;
+}
+.actualitestitle {
+  font-size: 2.2rem;
+  font-family: "Roboto Slab", "Inter", Arial, sans-serif;
+  color: #1976d2;
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.actualitesgroups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: center;
+}
+.actualitesgroup {
+  flex: 1 1 320px;
+  min-width: 280px;
+  border-radius: 18px;
+  margin-bottom: 2rem;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.actualitesgroup:hover {
+  transform: translateY(-6px);
+}
+.actualitesgrouptitle {
+  font-size: 1.25rem;
+  font-family: "Roboto Slab", "Inter", Arial, sans-serif;
+  color: #1976d2;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  text-align: left;
+  letter-spacing: 0.5px;
+}
+
+.actualitesgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  justify-items: center;
+}
+.actualitecard {
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 36px rgba(159, 155, 155, 0.427);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 220px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.actualitecard:hover {
+  transform: translateY(-18px) scale(1.05);
+}
+.actualiteimg {
+  width: 150px;
+  height: 150px;
+}
+.actualitecard-title {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #1976d2;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+.actualiteresume {
+  font-size: 1rem;
+  color: #222;
+  text-align: center;
+}
+@media (max-width: 900px) {
+  .actualitesgroups {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .actualitesgroup {
+    min-width: 0;
+    width: 100%;
+    padding: 1rem 0.5rem;
+  }
+  .actualitesgrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,41 @@
+.advantagecard {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(106, 130, 251, 0.08);
+  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  will-change: transform, box-shadow;
+}
+.advantagecard:hover,
+.advantagecard:focus-visible {
+  transform: scale(1.045) translateY(-4px);
+  box-shadow: 0 8px 24px rgba(106, 130, 251, 0.18);
+  z-index: 2;
+}
+.advantagecardiconwrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+.advantage-cardicon {
+  width: 48px;
+  height: 48px;
+  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.advantagecard:hover .advantage-cardicon,
+.advantagecard:focus-visible .advantage-cardicon {
+  transform: scale(1.15) rotate(-8deg);
+}
+.advantagecardtitle {
+  font-size: 1.15em;
+  font-weight: 700;
+  color: #213547;
+  margin-bottom: 0.5em;
+}
+.advantagecarddesc {
+  color: #444;
+  font-size: 1em;
+  line-height: 1.6;
+}

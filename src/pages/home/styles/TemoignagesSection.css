@@ -1,0 +1,311 @@
+.temoignages-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.9em;
+  margin-top: 1.6em;
+  padding-bottom: 0.5em;
+}
+
+.temoignages-pagination-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(120deg, #e3eafc 60%, #b3c6e6 100%);
+  border: 2px solid #e0e7ef;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+  transition: background 0.22s, transform 0.22s, border 0.22s, box-shadow 0.22s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+}
+
+.temoignages-pagination-dot:hover,
+.temoignages-pagination-dot:focus {
+  background: linear-gradient(120deg, #d2e3fc 60%, #90caf9 100%);
+  border: 2px solid #1976d2;
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.18);
+  transform: scale(1.15);
+}
+
+.temoignages-pagination-dot.active {
+  background: linear-gradient(120deg, #1976d2 60%, #4f8cff 100%);
+  border: 2px solid #1976d2;
+  box-shadow: 0 2px 6px rgba(25, 118, 210, 0.15);
+  transform: scale(1.18);
+}
+/* Styles extraits du JSX */
+.temoignagesgrid-styled {
+  position: relative;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 0;
+  margin: 32px 0 40px 0;
+  cursor: pointer;
+}
+
+.temoignages-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: none;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+  color: #1976d2;
+}
+.temoignages-arrow-left {
+  left: 180px;
+}
+.temoignages-arrow-right {
+  right: 90px;
+}
+
+.temoignagescard-motion {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  margin-right: 200px;
+}
+
+.temoignages-submit-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5em;
+}
+
+.temoignages-submit-btn {
+  background: linear-gradient(90deg, #6a82fb 60%, #4f8cff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.55em 1.6em;
+  font-weight: 700;
+  font-size: 1em;
+  box-shadow: 0 2px 8px rgba(106, 130, 251, 0.1);
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  cursor: pointer;
+  outline: none;
+}
+.temoignages-submit-btn:hover {
+  color: #ffd700;
+  box-shadow: 0 4px 16px rgba(106, 130, 251, 0.18);
+}
+.temoignages-submit-plus {
+  margin-right: 0.5em;
+}
+
+.temoignages-thankyou {
+  text-align: center;
+  color: #4f8cff;
+  margin-top: 16px;
+  font-weight: 600;
+}
+/* Formulaire de soumission de témoignage */
+.temoignage-form {
+  margin: 2.5em auto 0 auto;
+  max-width: 900px;
+  background: linear-gradient(120deg, #fafdff 60%, #eaf6ff 100%);
+  border-radius: 1.5rem;
+  padding: 2.2em 2em 1.5em 2em;
+  border: 1.5px solid #e3f0ff;
+  margin-right: 5.5rem;
+}
+
+.temoignage-form label {
+  font-weight: 600;
+  color: #1976d2;
+  margin-bottom: 0.3em;
+}
+
+.temoignage-form input,
+.temoignage-form textarea {
+  width: 100%;
+  margin-top: 1em;
+  margin-bottom: 0.7em;
+  padding: 0.7em 1em;
+  border-radius: 0.7em;
+  border: 1.5px solid #b3d1f7;
+  font-size: 1em;
+  font-family: inherit;
+  background: #fafdff;
+  transition: border 0.2s;
+  box-sizing: border-box;
+}
+.temoignage-form input:focus,
+.temoignage-form textarea:focus {
+  border: 1.5px solid #1976d2;
+  outline: none;
+}
+.temoignage-form textarea {
+  resize: vertical;
+  min-height: 80px;
+  max-height: 200px;
+}
+.temoignage-form .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.7em;
+}
+.temoignage-form button[type="button"] {
+  background: #e3f0ff;
+  color: #1976d2;
+  border: none;
+  border-radius: 0.7em;
+  padding: 0.6em 1.3em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+.temoignage-form button[type="button"]:hover {
+  background: #b3d1f7;
+  color: #0a2a5c;
+}
+.temoignage-form button[type="submit"] {
+  background: linear-gradient(90deg, #6a82fb 60%, #4f8cff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 0.7em;
+  padding: 0.6em 1.3em;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(106, 130, 251, 0.1);
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+}
+/* TemoignagesSection.css */
+
+.temoignages {
+  width: 100%;
+  margin: 3rem auto;
+  max-width: 1090px;
+  margin-right: 3.5rem;
+  box-sizing: border-box;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: #1976d2;
+}
+
+.temoignagestitle {
+  font-size: 2.2rem;
+  font-family: "Roboto Slab", "Montserrat", Arial, sans-serif;
+  color: #1976d2;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 1.2px;
+  text-shadow: 0 2px 8px rgba(25, 118, 210, 0.07);
+}
+
+.temoignagesgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  justify-content: center;
+  margin: 0 auto;
+  margin-right: 7rem;
+}
+
+.temoignagecard {
+  border-radius: 2rem;
+  box-shadow: 0 8px 36px rgba(78, 77, 77, 0.25);
+  padding: 3rem 2.5rem 2.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 220px;
+  max-width: 340px;
+  margin-bottom: 0;
+  transition: box-shadow 0.35s ease, transform 0.35s ease, background 0.35s ease;
+  position: relative;
+}
+.temoignagecard:hover {
+  transform: translateY(-14px) scale(1.1);
+  background: #f0f7ff;
+}
+
+.temoignagecard::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: 0.7rem;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #1976d2 0%, #ffb347 100%);
+  opacity: 0.1;
+}
+
+.temoignageavatarbg {
+  background: linear-gradient(90deg, #e3f0ff 0%, #626669 100%);
+  border-radius: 50%;
+  padding: 0.5rem;
+  margin-bottom: 1.3rem;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+}
+.temoignageavatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2.5px solid #fff;
+  box-shadow: 0 2px 8px #1976d21a;
+}
+
+.temoignagequote {
+  font-size: 1.13rem;
+  font-style: italic;
+  color: #1976d2;
+  margin-bottom: 1.3rem;
+  padding: 0 0.5rem;
+  position: relative;
+  text-align: center;
+  font-family: "Inter", "Montserrat", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.temoignagequotemark {
+  color: #ffb347;
+  font-size: 1.3em;
+  font-weight: bold;
+  vertical-align: top;
+  margin: 0 0.1em;
+  opacity: 0.7;
+}
+
+.temoignageauthor {
+  font-weight: 700;
+  color: #0a2a5c;
+  margin-bottom: 0.2rem;
+  font-size: 1.08rem;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+.temoignagerole {
+  font-size: 0.98rem;
+  color: #1976d2;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+  opacity: 0.85;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .temoignagesgrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .temoignagesgrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .temoignagecard {
+    max-width: 95vw;
+  }
+}

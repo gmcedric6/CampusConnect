@@ -1,0 +1,88 @@
+/* Bouton CTA pointer */
+.ctabtn-pointer {
+  cursor: pointer;
+  border-radius: 99px;
+}
+.cta {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 32px rgba(25, 118, 210, 0.08);
+  padding: 3rem 2rem 2.5rem 2rem;
+  box-sizing: border-box;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.ctatitle {
+  font-size: 2.2rem;
+  font-family: "Roboto Slab", "Montserrat", Arial, sans-serif;
+  color: #1976d2;
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.ctasubtitle {
+  font-size: 1.15rem;
+  color: #1976d2;
+  margin-bottom: 2rem;
+  font-family: "Inter", "Montserrat", Arial, sans-serif;
+}
+
+.ctabuttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ctabtn {
+  display: inline-block;
+  padding: 1rem 2.2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 2rem;
+  text-decoration: none;
+  transition: background 0.18s, color 0.18s;
+  margin-bottom: 0.7rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.ctabtnmain {
+  background: #1976d2;
+  color: #fff;
+  border-color: #1976d2;
+}
+
+.ctabtnmain:hover,
+.ctabtnmain:focus {
+  background: #145ea8;
+  border-color: #145ea8;
+  outline: none;
+}
+
+.ctabtndemo {
+  background: #fff;
+  color: #1976d2;
+  border-color: #fff;
+}
+
+.ctabtndemo:hover,
+.ctabtndemo:focus {
+  background: #1976d2;
+  color: #fff;
+  border-color: #1976d2;
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .ctabuttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,267 @@
+.aproposcontainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.15);
+  max-width: 1200px;
+  padding: 3.5rem 2rem 2.5rem 2rem;
+  gap: 2.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(8px);
+  -moz-backdrop-filter: blur(8px);
+  -o-backdrop-filter: blur(8px);
+  -ms-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+@media (min-width: 900px) {
+  .aproposcontainer.apropos2col {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3.5rem;
+  }
+  @keyframes fadeInAproposImg {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .aproposimg {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 1.2rem;
+    box-shadow: 0 8px 32px rgba(82, 83, 84, 0.486);
+    -webkit-backdrop-filter: blur(18px) saturate(180%);
+    backdrop-filter: blur(18px) saturate(180%);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+      background 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    margin-top: 3rem;
+  }
+  .aproposimg:hover {
+    transform: scale(1.04);
+  }
+  .aproposcontentcol {
+    flex: 2 1 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    gap: 1.5rem;
+  }
+}
+
+.aproposcontainercentered {
+  text-align: center;
+}
+.apropostitle {
+  font-size: 2.4rem;
+  font-family: "Poppins", "Montserrat", Arial, sans-serif;
+  font-weight: 800;
+  color: #1976d2;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+.aproposmissionhighlight {
+  display: flex;
+  flex-direction: column;
+}
+.aproposmissionlabel {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0a2a5c;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.aproposmissionlabel::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0px;
+  width: 0;
+  height: 2px;
+  background: #1976d2;
+  border-radius: 2px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.aproposmissionlabel:hover {
+  color: #1976d2;
+  transform: translateY(-3px) scale(1.08);
+}
+.aproposmissionlabel:hover::after {
+  width: 100%;
+}
+.aproposmissiontext {
+  font-size: 1.18rem;
+  color: #213547;
+  line-height: 1.7;
+  font-weight: 500;
+  text-align: justify;
+  opacity: 9;
+  transform: translateY(16px);
+  animation: fadeInMission 1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+  background: rgba(246, 250, 253, 0.5);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  padding: 0rem 1.5rem;
+}
+.aproposhistoirelabel {
+  font-weight: 600;
+  color: #0a2a5c;
+  font-size: 1.05rem;
+  position: relative;
+  transition: color 1s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+.aproposhistoirelabel::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #1976d2;
+  border-radius: 2px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.aproposhistoirelabel:hover {
+  color: #1976d2;
+  transform: translateY(-2px) scale(1.03);
+}
+.aproposhistoirelabel:hover::after {
+  width: 100%;
+  background: #1976d2;
+}
+
+.aproposvaleurbadge {
+  display: inline-block;
+  background: #e3f2fd;
+  color: #1976d2;
+  font-weight: 600;
+  border-radius: 16px;
+  padding: 0.1rem 1rem;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  transition: background 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.aproposvaleurbadge:hover {
+  background: rgba(35, 78, 112, 0.65);
+  color: #fff;
+  transform: translateY(-2px) scale(1.05);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+.aproposvaleurs {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  color: #1976d2;
+  font-size: 1.08rem;
+}
+.aproposvaleurs > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  margin-left: 4rem;
+}
+
+.fade-in-apropos {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInApropos 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+@keyframes fadeInApropos {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.aproposmission {
+  margin-bottom: 1.5rem;
+}
+.aproposhistoire {
+  margin-bottom: 1.5rem;
+}
+.aproposvaleurs {
+  margin-bottom: 1.5rem;
+}
+.aproposmission.fade-in-apropos {
+  animation-delay: 0.1s;
+}
+.aproposhistoire.fade-in-apropos {
+  animation-delay: 0.3s;
+}
+.aproposvaleurs.fade-in-apropos {
+  animation-delay: 0.5s;
+}
+.aproposmission,
+.aproposhistoire,
+.aproposvaleurs {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+.aproposicon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 2rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+.aproposicon:hover {
+  transform: scale(1.13);
+  box-shadow: 0 2px 12px rgba(25, 118, 210, 0.12);
+}
+.aproposicon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.aproposmissionrow {
+  display: flex;
+  align-items: center;
+  margin-left: 0.5rem;
+}
+.aproposhistoirerow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.aproposhistoiretext {
+  font-size: 1.18rem;
+  color: #213547;
+  line-height: 1.7;
+  font-weight: 500;
+  text-align: justify;
+  background: rgba(246, 250, 253, 0.7);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  border-radius: 8px;
+  padding: 0rem 1.5rem;
+  opacity: 9;
+  animation: fadeInMission 1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+}

@@ -1,0 +1,244 @@
+.loginsubtitle {
+  font-size: 1.15rem;
+  color: #0a2a5c;
+  font-family: "Montserrat", "Inter", Arial, sans-serif;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: -1.2rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px rgba(25, 118, 210, 0.07);
+}
+.loginpasswordwrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.loginpasswordwrapper input {
+  width: 100%;
+  box-sizing: border-box;
+  padding-right: 2.5rem;
+}
+.loginpasswordtoggle {
+  background: none;
+  border: none;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+  color: #1976d2;
+  outline: none;
+  height: 2.2rem;
+}
+.loginpasswordtoggle:focus svg,
+.loginpasswordtoggle:hover svg {
+  stroke: #0a2a5c;
+}
+.loginback {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+.loginbacklink {
+  color: #1976d2;
+  font-size: 1rem;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s;
+  font-weight: 600;
+}
+.loginbacklink:hover {
+  color: #0a2a5c;
+}
+.loginselect {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+.login {
+  width: 100vw;
+  height: 100vh;
+  min-height: unset;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(120deg, #eaf6ff 60%, #fafdff 100%);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.loginsplitcontainer {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  min-height: unset;
+  border-radius: 0;
+  overflow: hidden;
+  background: inherit;
+}
+
+.loginimagecol {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eaf6ff;
+  min-width: 0;
+  height: 100vh;
+}
+
+.loginimage {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.loginformcol {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafdff;
+  min-width: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.logincontainer {
+  width: 100%;
+  max-width: 420px;
+  margin: auto;
+  padding: 4rem 2.5rem 3rem 2.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logintitle {
+  font-size: 2rem;
+  font-family: "Roboto Slab", "Montserrat", Arial, sans-serif;
+  color: #1976d2;
+  font-weight: 800;
+  margin-bottom: 2.2rem;
+  text-align: center;
+  letter-spacing: 1.2px;
+  text-shadow: 0 2px 8px rgba(25, 118, 210, 0.07);
+}
+
+.loginform {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.loginfield {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.loginlabel {
+  font-size: 1rem;
+  color: #0a2a5c;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.logininput {
+  padding: 0.8rem 1rem;
+  border-radius: 1rem;
+  border: 1.5px solid #e3f0ff;
+  background: #fff;
+  font-size: 1rem;
+  font-family: "Inter", Arial, sans-serif;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.04);
+  outline: none;
+  transition: border 0.2s;
+}
+
+.logininput:focus {
+  border: 1.5px solid #1976d2;
+}
+
+.logincta {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.loginlinks {
+  margin-top: 1rem;
+  text-align: right;
+}
+.loginlinksrow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.7rem;
+  justify-content: center;
+  margin-top: 1.2rem;
+}
+.loginlinkssep {
+  color: #b0b8c9;
+  font-size: 1.1rem;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.loginregisterlink {
+  font-weight: 600;
+}
+
+.loginlink {
+  color: #1976d2;
+  font-size: 0.98rem;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.loginlink:hover {
+  color: #0a2a5c;
+}
+
+.loginsuccess {
+  color: #388e3c;
+  background: #e8f5e9;
+  border-radius: 1rem;
+  padding: 1.2rem 1rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 2px 8px rgba(56, 142, 60, 0.08);
+}
+
+@media (max-width: 800px) {
+  .loginsplitcontainer {
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+  }
+  .loginimagecol,
+  .loginformcol {
+    height: 50vh;
+    width: 100vw;
+  }
+  .loginimage {
+    height: 50vh;
+  }
+}
