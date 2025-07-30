@@ -1,14 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
+import SectionContainer from "../../components/SectionContainer";
+import SectionTitle from "../../components/SectionTitle";
 import "./styles/PourQui.css";
 import ProfileCard from "../../components/ProfileCard";
-
 import { profilsGroups } from "../../data/profils";
 
 function PourQui() {
   return (
-    <section id="pourqui" className="pourqui fade-in pourquitech">
-      <h2 className="pourquititle">Pour qui&nbsp;?</h2>
+    <SectionContainer id="pourqui" className="pourqui fade-in pourquitech">
+      <SectionTitle className="pourquititle">Pour qui&nbsp;?</SectionTitle>
       <p className="pourquisubtitle">
         CampusConnect s’adapte à chaque profil&nbsp;: apprenants, encadrants et
         gestion.
@@ -45,7 +46,7 @@ function PourQui() {
           </div>
         ))}
       </div>
-    </section>
+    </SectionContainer>
   );
 }
 

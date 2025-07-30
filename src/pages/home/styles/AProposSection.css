@@ -1,3 +1,34 @@
+/* Police fun et éducative sur toute la page d'accueil */
+html,
+body,
+section,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+button,
+label,
+input,
+textarea,
+.apropostitle,
+.apropostext,
+.apropostext2,
+.apropostext3,
+.apropostext4,
+.apropostext5,
+.apropostext6,
+.apropostext7,
+.apropostext8,
+.apropostext9,
+.apropostext10 {
+  font-family: "Montserrat", Arial, sans-serif !important;
+}
+
 .aproposcontainer {
   display: flex;
   flex-direction: column;
@@ -62,7 +93,7 @@
 }
 .apropostitle {
   font-size: 2.4rem;
-  font-family: "Poppins", "Montserrat", Arial, sans-serif;
+  font-family: "Inter", Arial, sans-serif;
   font-weight: 800;
   color: #1976d2;
   margin-bottom: 1.5rem;

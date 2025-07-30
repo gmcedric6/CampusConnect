@@ -1,18 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./styles/PaiementSection.css";
+import SectionContainer from "../../components/SectionContainer";
+import SectionTitle from "../../components/SectionTitle";
 import { payments } from "../../data/payments";
+
 const PaiementSection = () => {
   return (
-    <motion.section
-      id="paiement"
-      className="paiement paiementtech"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.5 }}
-    >
-      <h2 className="paiementtitle">Payez comme vous voulez</h2>
+    <SectionContainer id="paiement" className="paiement paiementtech">
+      <SectionTitle className="paiementtitle">
+        Payez comme vous voulez
+      </SectionTitle>
       <div className="paiementgallery paiementgalleryflat">
         {payments.map((p, idx) => (
           <motion.div
@@ -24,7 +22,12 @@ const PaiementSection = () => {
             viewport={{ once: true, amount: 0.5 }}
           >
             <div className="paiementiconbg">
-              <img src={p.src} alt={p.alt} className="paiementicon" />
+              <img
+                src={p.src}
+                alt={p.alt}
+                className="paiementicon"
+                loading="lazy"
+              />
             </div>
             <span className="paiementlabel">{p.label}</span>
           </motion.div>
@@ -35,7 +38,7 @@ const PaiementSection = () => {
           Besoin d’aide pour votre paiement ? Contactez l’assistance
         </a>
       </div>
-    </motion.section>
+    </SectionContainer>
   );
 };
 

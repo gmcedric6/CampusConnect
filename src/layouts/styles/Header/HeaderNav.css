@@ -1,0 +1,110 @@
+.headermenu li {
+  margin-bottom: 2.2rem;
+}
+.headermenu li:last-child {
+  margin-bottom: 0;
+}
+/* Styles du menu principal */
+.headernav {
+  margin: 0;
+  min-width: 0;
+}
+.headermenu {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.6rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  white-space: nowrap;
+  overflow-x: visible;
+}
+.headerlink {
+  color: #1976d2;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s;
+  outline: none;
+  padding: 0.2em 0.5em;
+  border-radius: 4px;
+}
+.headerlink:focus {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #ffb347;
+  color: #ffb347;
+  z-index: 2;
+}
+.headerlink::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ffb347;
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+}
+.headerlink:hover,
+.headerlink:focus {
+  color: #ffb347;
+}
+.headerlink:hover::after,
+.headerlink:focus::after {
+  width: 100%;
+  background: #ffb347;
+}
+
+/* Ajout responsive menu burger */
+.burger-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 0.5em;
+  /* Style pour coller le mot Menu à l'icône burger */
+  .burger-menu-btn span {
+    margin-top: -2px;
+    line-height: 1;
+    font-size: 0.85rem;
+    color: #1976d2;
+  }
+}
+@media (max-width: 768px) {
+  .burger-menu-btn {
+    display: block;
+  }
+  .headermenu {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100vw;
+    background: transparent;
+    flex-direction: column;
+    gap: 3.2rem;
+    box-shadow: 0 8px 32px rgba(25, 118, 210, 0.18);
+    z-index: 9999;
+    padding: 2rem 1rem;
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+  }
+  .headermenu.open {
+    display: flex;
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    padding-top: 3rem;
+    padding-left: 0.5rem;
+  }
+}

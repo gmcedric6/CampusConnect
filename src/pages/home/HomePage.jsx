@@ -1,4 +1,6 @@
+import React, { useEffect } from "react";
 import Hero from "./Hero";
+import EquipeSection from "./EquipeSection";
 import AProposSection from "./AProposSection";
 import ChiffresSection from "./ChiffresSection";
 import AvantagesSection from "./AvantagesSection";
@@ -10,11 +12,24 @@ import PaiementSection from "./PaiementSection";
 import PartenairesSection from "./PartenairesSection";
 import ContactSupportSection from "./ContactSupportSection";
 import CallToActionSection from "./CallToActionSection";
+import NewsletterSection from "./NewsletterSection";
 import ChatbotWidget from "../../components/ChatbotWidget";
+import ScrollToTopButton from "../../components/ScrollToTopButton";
 function HomePage() {
+  useEffect(() => {
+    document.title = "CampusConnect | Plateforme pour étudiants";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute(
+        "content",
+        "CampusConnect est la plateforme digitale qui facilite la gestion universitaire, les paiements et la communication entre étudiants, parents, professeurs et administration."
+      );
+    }
+  }, []);
   return (
     <>
       <Hero />
+      <EquipeSection />
       <AProposSection />
       <ChiffresSection />
       <AvantagesSection />
@@ -25,8 +40,10 @@ function HomePage() {
       <PaiementSection />
       <PartenairesSection />
       <ContactSupportSection />
+      <NewsletterSection />
       <CallToActionSection />
       <ChatbotWidget />
+      <ScrollToTopButton />
     </>
   );
 }

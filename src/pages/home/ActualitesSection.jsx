@@ -2,23 +2,19 @@ import React from "react";
 import { motion } from "framer-motion";
 import Card from "../../components/Card";
 import "./styles/ActualitesSection.css";
+import SectionContainer from "../../components/SectionContainer";
+import SectionTitle from "../../components/SectionTitle";
+import SectionGrid from "../../components/SectionGrid";
 import { actualitesGroups } from "../../data/actualites";
 
 const ActualitesSection = () => (
-  <motion.section
-    id="actualites"
-    className="actualites actualitestech"
-    initial={{ opacity: 0, y: 60 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-    viewport={{ once: true, amount: 0.5 }}
-  >
-    <h2 className="actualitestitle">La vie du campus</h2>
+  <SectionContainer id="actualites" className="actualites actualitestech">
+    <SectionTitle className="actualitestitle">La vie du campus</SectionTitle>
     <div className="actualitesgroups">
       {actualitesGroups.map((group) => (
         <div className="actualitesgroup" key={group.group}>
           <h3 className="actualitesgroup-title">{group.group}</h3>
-          <div className="actualitesgrid">
+          <SectionGrid className="actualitesgrid">
             {group.articles.map((a, idx) => (
               <Card
                 key={idx}
@@ -29,11 +25,11 @@ const ActualitesSection = () => (
                 className="actualitecard"
               />
             ))}
-          </div>
+          </SectionGrid>
         </div>
       ))}
     </div>
-  </motion.section>
+  </SectionContainer>
 );
 
 export default ActualitesSection;

@@ -2,6 +2,8 @@ import React from "react";
 import { useContactForm } from "../../hooks/useContactForm";
 import { motion } from "framer-motion";
 import "./styles/ContactSupportSection.css";
+import SectionContainer from "../../components/SectionContainer";
+import SectionTitle from "../../components/SectionTitle";
 
 const ContactSupportSection = () => {
   // Utilisation du hook personnalisé pour le formulaire de contact
@@ -29,17 +31,10 @@ const ContactSupportSection = () => {
   };
 
   return (
-    <motion.section
-      id="contact-support"
-      initial={{ opacity: 0, x: 80 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.5 }}
-      className="contactsupport-section"
-    >
+    <SectionContainer id="contact-support" className="contactsupport-section">
       <div className="contactsupport-flexrow">
         <section className="contactsupport-block contactsupport-left fade-in">
-          <h2 className="contactsupporttitle">
+          <SectionTitle className="contactsupporttitle">
             <span
               className="contactsupporticon"
               aria-label="Assistance"
@@ -48,7 +43,7 @@ const ContactSupportSection = () => {
               🛟
             </span>
             Besoin d’aide ?
-          </h2>
+          </SectionTitle>
           <p className="contactsupporttext">
             Notre équipe vous accompagne par mail ou téléphone.
             <br />
@@ -67,14 +62,25 @@ const ContactSupportSection = () => {
           </a>
         </section>
         <section className="contactsupport-block contactsupport-right fade-in">
-          <form className="contactquickform" onSubmit={handleSubmit} noValidate>
+          <form
+            className="contactquickform"
+            onSubmit={handleSubmit}
+            noValidate
+            role="form"
+          >
             <div className="contactquickform-title">
               Une question ?
               <div>Un souci, une idée ? Balance-nous un message !</div>
             </div>
-            {error && <div className="contactquickform-error">{error}</div>}
+            {error && (
+              <div className="contactquickform-error" aria-live="polite">
+                {error}
+              </div>
+            )}
             {success && (
-              <div className="contactquickform-success">{success}</div>
+              <div className="contactquickform-success" aria-live="polite">
+                {success}
+              </div>
             )}
             <label>
               Nom
@@ -117,7 +123,7 @@ const ContactSupportSection = () => {
           </form>
         </section>
       </div>
-    </motion.section>
+    </SectionContainer>
   );
 };
 

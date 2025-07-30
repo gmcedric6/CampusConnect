@@ -1,7 +1,7 @@
 // Footer.jsx
 import React from "react";
 import { motion } from "framer-motion";
-import "./Footer.css";
+import "./styles/Footer.css";
 import facebookIcon from "../assets/image/facebook.svg";
 import twitterIcon from "../assets/image/twitter.svg";
 import linkedinIcon from "../assets/image/linkedin.svg";
@@ -59,7 +59,7 @@ const Footer = () => (
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
             style={{ display: "inline-block" }}
           >
-            <img src={facebookIcon} alt="Facebook" />
+            <img src={facebookIcon} alt="Facebook" loading="lazy" />
           </motion.a>
           <motion.a
             href="#"
@@ -72,7 +72,7 @@ const Footer = () => (
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
             style={{ display: "inline-block" }}
           >
-            <img src={twitterIcon} alt="Twitter" />
+            <img src={twitterIcon} alt="Twitter" loading="lazy" />
           </motion.a>
           <motion.a
             href="#"
@@ -85,7 +85,7 @@ const Footer = () => (
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
             style={{ display: "inline-block" }}
           >
-            <img src={linkedinIcon} alt="LinkedIn" />
+            <img src={linkedinIcon} alt="LinkedIn" loading="lazy" />
           </motion.a>
         </div>
       </div>

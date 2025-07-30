@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import "./ChatbotWidget.css";
+import "./styles/ChatbotWidget.css";
 
 const defaultMessages = [
   {

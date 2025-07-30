@@ -2,25 +2,27 @@ import React from "react";
 import { motion } from "framer-motion";
 import "./styles/AvantagesSection.css";
 import AdvantageCard from "../../components/AdvantageCard";
-
+import SectionContainer from "../../components/SectionContainer";
+import SectionTitle from "../../components/SectionTitle";
+import SectionGrid from "../../components/SectionGrid";
 import { ADVANTAGES } from "../../data/avantages";
 
 function AvantagesSection() {
   return (
-    <section
+    <SectionContainer
       id="avantages"
       className="avantages fade-in"
-      aria-labelledby="avantages-title"
+      aria-labelledby="avantagestitle"
     >
       <div className="avantagescontainer">
-        <h2 id="avantagestitle" className="avantagestitle">
+        <SectionTitle id="avantagestitle" className="avantagestitle">
           Pourquoi choisir CampusConnect&nbsp;?
-        </h2>
+        </SectionTitle>
         <p className="avantagessubtitle">
           Une plateforme académique moderne, pensée pour les étudiants, parents
           et enseignants.
         </p>
-        <div className="avantagesgrid">
+        <SectionGrid className="avantagesgrid">
           {ADVANTAGES.map((advantage, idx) => (
             <motion.div
               key={advantage.title}
@@ -37,9 +39,9 @@ function AvantagesSection() {
               />
             </motion.div>
           ))}
-        </div>
+        </SectionGrid>
       </div>
-    </section>
+    </SectionContainer>
   );
 }
 

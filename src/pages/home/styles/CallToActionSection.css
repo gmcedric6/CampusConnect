@@ -1,3 +1,105 @@
+.demo-modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.demo-modal {
+  background: #fff;
+  border-radius: 1.2em;
+  box-shadow: 0 8px 32px rgba(25, 118, 210, 0.18);
+  padding: 2.2em 2em 1.5em 2em;
+  min-width: 320px;
+  max-width: 95vw;
+  position: relative;
+  animation: modalIn 0.3s cubic-bezier(0.4, 1.6, 0.6, 1) both;
+}
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.demo-modal-close {
+  position: absolute;
+  top: 0.7em;
+  right: 1em;
+  background: none;
+  border: none;
+  font-size: 1.7em;
+  color: #1976d2;
+  cursor: pointer;
+}
+.demo-modal-form label {
+  display: block;
+  margin-bottom: 0.7em;
+  color: #1976d2;
+  font-weight: 600;
+}
+.demo-modal-form input,
+.demo-modal-form textarea {
+  width: 100%;
+  margin-top: 0.2em;
+  margin-bottom: 0.5em;
+  padding: 0.7em 1em;
+  border-radius: 0.7em;
+  border: 1.5px solid #b3d1f7;
+  font-size: 1em;
+  font-family: "Inter", Arial, sans-serif;
+  background: #fafdff;
+  transition: border 0.2s;
+  box-sizing: border-box;
+}
+.demo-modal-form input:focus,
+.demo-modal-form textarea:focus {
+  border: 1.5px solid #1976d2;
+  outline: 2.5px solid #1976d2;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #e3f2fd;
+}
+.demo-modal-error {
+  color: #d32f2f;
+  background: #ffeaea;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+  margin-bottom: 0.5em;
+  font-size: 0.98em;
+  text-align: center;
+}
+.demo-modal-success {
+  color: #388e3c;
+  background: #eafbe7;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+  margin-bottom: 0.5em;
+  font-size: 0.98em;
+  text-align: center;
+}
+.loader {
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  border: 2.5px solid #1976d2;
+  border-top: 2.5px solid #e3f2fd;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  vertical-align: middle;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 /* Bouton CTA pointer */
 .ctabtn-pointer {
   cursor: pointer;
@@ -19,7 +121,7 @@
 
 .ctatitle {
   font-size: 2.2rem;
-  font-family: "Roboto Slab", "Montserrat", Arial, sans-serif;
+  font-family: "Montserrat", Arial, sans-serif;
   color: #1976d2;
   font-weight: 800;
   margin-bottom: 1.2rem;
@@ -30,7 +132,7 @@
   font-size: 1.15rem;
   color: #1976d2;
   margin-bottom: 2rem;
-  font-family: "Inter", "Montserrat", Arial, sans-serif;
+  font-family: "Inter", Arial, sans-serif;
 }
 
 .ctabuttons {

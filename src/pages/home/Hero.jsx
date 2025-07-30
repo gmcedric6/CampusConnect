@@ -1,74 +1,77 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, easeOut } from "framer-motion";
+import SectionContainer from "../../components/SectionContainer";
+import SectionTitle from "../../components/SectionTitle";
 import "./styles/Hero.css";
 import studentsHero from "../../assets/image/students-hero.png";
+import {
+  containerVariants,
+  itemVariants,
+  bounceVariants,
+} from "../../animations/heroAnimations";
 
 function Hero() {
+  const [animKey, setAnimKey] = useState(0);
+
   return (
-    <motion.section
+    <SectionContainer
       id="accueil"
       className="hero heroinstitutionnel herohorizontal"
+      as={motion.section}
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 0.8, ease: easeOut }}
+      viewport={{ amount: 0.5 }}
+      onViewportEnter={() => setAnimKey((k) => k + 1)}
     >
       {/* Partie gauche : le texte, le badge, le bouton */}
-      <div className="herocontent herocontentcard">
-        <motion.span
-          className="herobadge"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.05 }}
-          viewport={{ once: true, amount: 0.5 }}
-        >
+      <motion.div
+        key={animKey}
+        className="herocontent herocontentcard"
+        variants={containerVariants}
+        initial="visible"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0 }}
+      >
+        <motion.span className="herobadge" variants={bounceVariants}>
           Plateforme certifiée
         </motion.span>
-        <motion.h1
+        <SectionTitle
+          as={motion.h1}
           className="herotitle"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          viewport={{ once: true, amount: 0.5 }}
+          variants={itemVariants}
         >
-          CampusConnect
-        </motion.h1>
-        <motion.p
-          className="herosubtitle"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.18 }}
-          viewport={{ once: true, amount: 0.5 }}
-        >
+          CampusConnect. Plateforme digitale pour étudiants, parents et
+          enseignants
+        </SectionTitle>
+        <motion.p className="herosubtitle" variants={itemVariants}>
           La solution digitale pour gérer votre université, vos cours et vos
           paiements en toute sécurité.
         </motion.p>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25 }}
-          viewport={{ once: true, amount: 0.5 }}
-        >
+        <motion.div variants={bounceVariants}>
           <Link to="/login" className="btn btnprimary herocta btnanimate">
             Accéder à la plateforme
           </Link>
         </motion.div>
-      </div>
+      </motion.div>
       {/* Partie droite : l'image */}
-      <div className="heroimagecontainer heroimagecontainerhorizontal">
+      <motion.div
+        className="heroimagecontainer heroimagecontainerhorizontal"
+        initial={{ opacity: 1, x: 0, scale: 1 }}
+        whileInView={{ opacity: 1, x: 0, scale: 1 }}
+        transition={{ duration: 0.9, ease: "easeOut" }}
+        viewport={{ once: false, amount: 0 }}
+      >
         <img
           src={studentsHero}
-          alt="Étudiants connectés sur CampusConnect"
+          alt="Étudiants sur la plateforme CampusConnect"
           className="heroimage"
           loading="lazy"
         />
-      </div>
-      {/* Petit indicateur pour dire qu'on peut scroller */}
-      <div className="heroscrollindicator" aria-hidden="true">
-        <span className="scrollarrow">↓</span>
-      </div>
-    </motion.section>
+      </motion.div>
+    </SectionContainer>
   );
 }
+
 export default Hero;

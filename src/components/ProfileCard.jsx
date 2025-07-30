@@ -1,5 +1,5 @@
 import React from "react";
-import "./ProfileCard.css";
+import "./styles/ProfileCard.css";
 const ProfileCard = ({
   icon,
   alt,
@@ -11,7 +11,12 @@ const ProfileCard = ({
 }) => (
   <div className={`profilecard ${className}`} tabIndex={0} aria-label={title}>
     <div className="profilecardiconwrapper">
-      <img src={icon} alt={alt || title} className="profilecardicon" />
+      <img
+        src={icon}
+        alt={alt || title}
+        className="profilecardicon"
+        loading="lazy"
+      />
     </div>
     <h3 className="profilecardtitle" style={{ textAlign: "center" }}>
       {title}

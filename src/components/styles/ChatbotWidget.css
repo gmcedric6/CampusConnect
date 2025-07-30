@@ -115,9 +115,12 @@
   background: #fff;
   padding: 0.7em 0.7em 0.7em 0.7em;
   gap: 0.5em;
+  align-items: center;
 }
 .chatbot-inputbar input {
-  flex: 1 1 auto;
+  flex: 0 1 170px;
+  max-width: 170px;
+  min-width: 60px;
   border: 1.5px solid #b3d1f7;
   border-radius: 0.8em;
   padding: 0.6em 1em;
@@ -140,6 +143,8 @@
   font-weight: 700;
   cursor: pointer;
   transition: background 0.18s, color 0.18s;
+  min-width: 80px;
+  white-space: nowrap;
 }
 .chatbot-inputbar button:hover,
 .chatbot-inputbar button:focus {

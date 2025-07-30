@@ -1,25 +1,20 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./styles/PartenairesSection.css";
-
+import SectionContainer from "../../components/SectionContainer";
+import SectionTitle from "../../components/SectionTitle";
+import SectionGrid from "../../components/SectionGrid";
 import { partenaires } from "../../data/partenaires";
 
 const PartenairesSection = () => (
-  <motion.section
-    id="partenaires"
-    className="partenaires fade-in"
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1 }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-    viewport={{ once: true, amount: 0.5 }}
-  >
-    <h2 className="partenairestitle">
+  <SectionContainer id="partenaires" className="partenaires fade-in">
+    <SectionTitle className="partenairestitle">
       <span className="partenairestitle-icon" aria-hidden="true">
         🤝
       </span>
       Nos partenaires
-    </h2>
-    <div className="partenairesgrid">
+    </SectionTitle>
+    <SectionGrid className="partenairesgrid">
       {partenaires.map((p, idx) => (
         <figure className="partenaireitem" key={idx}>
           <div className="partenairelogobg">
@@ -42,8 +37,8 @@ const PartenairesSection = () => (
           <figcaption className="partenairename">{p.name}</figcaption>
         </figure>
       ))}
-    </div>
-  </motion.section>
+    </SectionGrid>
+  </SectionContainer>
 );
 
 export default PartenairesSection;

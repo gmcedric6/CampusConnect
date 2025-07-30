@@ -1,0 +1,210 @@
+/* Structure principale du header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1101;
+  background: linear-gradient(90deg, #eaf6ff 0%, #fafdff 100%);
+  box-shadow: 0 2px 64px rgba(148, 150, 152, 0.24);
+  transition: box-shadow 0.3s;
+  overflow: visible;
+}
+.header.scrolled {
+  box-shadow: 0 12px 36px 0 rgba(25, 118, 210, 0.18),
+    0 4px 16px 0 rgba(80, 80, 80, 0.13), 0 1px 4px 0 rgba(0, 0, 0, 0.07);
+}
+.headercontainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  height: 70px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow: visible;
+}
+.btn-login-desktop {
+  display: inline-block;
+}
+.btn-login-mobile {
+  display: none;
+}
+@media (max-width: 768px) {
+  .header-mobile .header-mobile-connexion {
+    order: 2;
+  }
+  .btn-login-desktop {
+    display: none !important;
+  }
+  .btn-login-mobile {
+    display: flex !important;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+  }
+  .btn-login-mobile-label {
+    display: block;
+    font-size: 0.75em;
+    color: #666;
+    text-align: center;
+    margin-top: 2px;
+  }
+}
+.headerlogo {
+  flex-shrink: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  text-decoration: none;
+}
+.headerlogotext {
+  font-family: "Roboto Slab", "Montserrat", "Poppins", Arial, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #1976d2;
+  background: linear-gradient(90deg, #1976d2 0%, #ffb347 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: text-shadow 0.4s, transform 0.4s;
+  text-shadow: 0 2px 12px rgba(25, 118, 210, 0.1);
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 768px) {
+  .headerlogotext {
+    display: inline;
+    font-size: 1.1rem;
+    max-width: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+.headerlogotext:hover,
+.headerlogotext:focus {
+  transform: scale(1.08) rotate(-2deg);
+  text-shadow: 0 6px 24px rgba(25, 118, 210, 0.18);
+}
+.headercenter {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: flex-end;
+  min-width: 0;
+  gap: 1rem;
+  margin-right: 0;
+}
+.headeractions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 1rem;
+  padding-right: 0.3rem;
+  flex-shrink: 0;
+}
+.btn {
+  border-radius: 2rem;
+  border: 2px solid #1976d2;
+  padding: 0.5em 1.4em;
+  font-size: 1em;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  outline: none;
+  color: #1976d2;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  display: inline-block;
+}
+.btnsecondary {
+  color: #1976d2;
+  border: 1px solid rgba(176, 179, 183, 0.128);
+  border-radius: 2rem;
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  backdrop-filter: blur(12px) saturate(180%);
+  font-weight: 700;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.btnsecondary:hover,
+.btnsecondary:focus {
+  color: #ffb347;
+  transform: translateY(-5px) scale(1.05);
+}
+.header-mobile {
+  display: none;
+}
+.header-desktop {
+  display: flex;
+}
+@media (max-width: 768px) {
+  .header-desktop {
+    display: none;
+  }
+  .header-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    gap: 0;
+    height: 70px;
+    width: 100vw;
+    max-width: 100vw;
+    background: #fff;
+    z-index: 1101;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .header-mobile .burger-menu-btn {
+    order: 1;
+    margin-left: 0.5rem;
+    margin-right: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 0;
+  }
+  .header-mobile .headerlogo {
+    order: 2;
+    margin-right: 0;
+  }
+  .header-mobile .btn-login-mobile {
+    margin-left: 0.5px;
+    margin-right: 18px;
+    order: 3;
+    max-width: 40px;
+  }
+  .header-mobile .btn-login-mobile-label {
+    display: none;
+  }
+  }
+  .header-mobile .headerlogoimg {
+    max-width: 58px;
+    height: 58px;
+  }
+  .header-mobile .headerlogotext {
+    font-size: 1.1rem;
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin-left: 16px;
+  }
+}

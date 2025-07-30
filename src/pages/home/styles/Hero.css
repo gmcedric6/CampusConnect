@@ -1,17 +1,13 @@
-/* HERO SECTION - STYLES */
-/* Layout principal de la section Hero */
+/* Hero : réduit le padding pour remonter le bloc */
 .hero {
   width: 100%;
   display: flex;
   gap: 3rem;
-  padding: 3.5rem 2rem;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 12px 48px rgba(25, 118, 210, 0.18);
+  padding: 90px 2rem 2.5rem 2rem; /* ajoute un padding-top pour compenser la hauteur du header sticky */
   -webkit-backdrop-filter: blur(32px) saturate(220%);
   backdrop-filter: blur(32px) saturate(220%);
   border: 2px solid rgba(255, 255, 255, 0.38);
 }
-
 /* Partie gauche : contenu texte */
 .herocontent {
   max-width: 520px;
@@ -48,7 +44,7 @@
 
 /* Titre principal */
 .herotitle {
-  font-family: "Poppins", "Montserrat", "Segoe UI", Arial, sans-serif;
+  font-family: "Montserrat", Arial, sans-serif;
   font-size: 2.7rem;
   font-weight: 800;
   color: #234e70;
@@ -60,7 +56,7 @@
 
 /* Sous-titre */
 .herosubtitle {
-  font-family: "Montserrat", "Segoe UI", Arial, sans-serif;
+  font-family: "Inter", Arial, sans-serif;
   font-size: 1.18rem;
   color: #234e70cc;
   margin-bottom: 2.1rem;
@@ -136,21 +132,51 @@
     transform: translateY(0);
   }
 }
-
-/* Indicateur de scroll */
-.heroscrollindicator {
-  position: absolute;
-  left: 50%;
-  bottom: 24px;
-  transform: translateX(-100%);
-}
-.scrollarrow {
-  font-size: 2.2rem;
-  color: #fc5c7d;
-}
-
 .fade-in {
   opacity: 0;
   transform: translateY(40px);
   animation: fadeInUp 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4.5rem 1rem 2rem 1rem;
+    gap: 2rem;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  .herocontent {
+    margin-left: 0;
+    padding: 1.5rem 0.5rem;
+    max-width: 100%;
+  }
+  .heroimagecontainer {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    justify-content: center;
+  }
+  .heroimage {
+    max-width: 90vw;
+    max-height: 220px;
+    margin: 0 auto;
+  }
+  .herocta {
+    width: 90%;
+    max-width: 320px;
+    margin: 1.2rem auto 0 auto;
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  .herotitle {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+  }
+  .herosubtitle {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    max-width: 95vw;
+  }
 }

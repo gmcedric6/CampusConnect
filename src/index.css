@@ -71,6 +71,26 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* Police fun et éducative sur tout le frontend */
+html,
+body,
+section,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+button,
+label,
+input,
+textarea {
+  font-family: "Baloo 2", "Nunito", "Comic Sans MS", cursive, sans-serif !important;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

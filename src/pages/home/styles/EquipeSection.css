@@ -1,0 +1,179 @@
+/* Style éducatif et fun */
+.equipe-section {
+  width: 100%;
+  /* background supprimé pour un fond transparent */
+  padding: 3.5rem 1.5rem 3rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: visible;
+}
+.equipe-container {
+  max-width: 900px;
+  width: 100%;
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 32px rgba(25, 118, 210, 0.1);
+  padding: 2.5rem 2rem 2rem 2rem;
+  text-align: center;
+}
+.equipe-title {
+  font-size: 2.1rem;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 900;
+  color: #ffb347;
+  margin-bottom: 0.7rem;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 12px #ffe7a3;
+}
+.equipe-desc {
+  color: #1976d2;
+  font-size: 1.13rem;
+  margin-bottom: 2.2rem;
+  font-family: "Inter", Arial, sans-serif;
+}
+.equipe-list {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.equipe-card {
+  background: #fffbe7;
+  border-radius: 1.5rem 1.5rem 2.5rem 2.5rem;
+  box-shadow: 0 4px 18px rgba(255, 179, 71, 0.13),
+    0 1.5px 8px 0 rgba(25, 118, 210, 0.08);
+  padding: 1.7rem 1.2rem 1.2rem 1.2rem;
+  width: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+  position: relative;
+  border: 2.5px dashed #ffb347;
+}
+.equipe-card::before {
+  content: "🎓";
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.1rem;
+  filter: drop-shadow(0 2px 6px #ffe7a3);
+}
+.equipe-card:hover {
+  box-shadow: 0 12px 36px #ffe7a3, 0 8px 32px rgba(25, 118, 210, 0.13);
+  transform: translateY(-10px) scale(1.07) rotate(-2deg);
+  animation: wiggle 0.5s;
+}
+@keyframes wiggle {
+  0% {
+    transform: translateY(-10px) scale(1.07) rotate(-2deg);
+  }
+  25% {
+    transform: translateY(-10px) scale(1.07) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.07) rotate(-2deg);
+  }
+  75% {
+    transform: translateY(-10px) scale(1.07) rotate(2deg);
+  }
+  100% {
+    transform: translateY(-10px) scale(1.07) rotate(-2deg);
+  }
+}
+.equipe-img {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3.5px solid #ffb347;
+  box-shadow: 0 2px 12px #ffe7a3;
+  background: #fffbe7;
+  filter: saturate(1.2) contrast(1.1) drop-shadow(0 2px 8px #ffe7a3);
+  transition: filter 0.2s;
+}
+.equipe-card:hover .equipe-img {
+  filter: saturate(1.5) contrast(1.2) drop-shadow(0 4px 16px #ffb347);
+}
+.equipe-name {
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #1976d2;
+  margin-bottom: 0.2rem;
+  font-family: "Montserrat", Arial, sans-serif;
+}
+.equipe-role {
+  color: #ffb347;
+  font-size: 1.01rem;
+  font-family: "Inter", Arial, sans-serif;
+}
+@media (max-width: 768px) {
+  .equipe-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+  .equipe-desc {
+    font-size: 0.98rem;
+    margin-bottom: 1.2rem;
+  }
+  .equipe-name {
+    font-size: 1rem;
+  }
+  .equipe-role {
+    font-size: 0.9rem;
+  }
+  .equipe-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1rem 2rem 1rem;
+    box-sizing: border-box;
+  }
+  .equipe-container {
+    margin: 0 auto;
+    background: none;
+    box-shadow: none;
+  }
+  .equipe-list-desktop {
+    display: none;
+  }
+  .equipe-list-mobile {
+    display: block;
+    width: 100vw;
+    margin: 0 calc(-50vw + 50%);
+    padding-bottom: 2rem;
+    overflow-x: visible;
+  }
+  .swiper {
+    width: 100vw;
+    padding-bottom: 2.2rem;
+  }
+  .swiper-pagination {
+    bottom: 0 !important;
+  }
+  .equipe-card {
+    min-width: 10vw;
+    max-width: 250px;
+    margin: 2.5rem auto 0 auto;
+  }
+  .equipe-card:hover {
+    box-shadow: 0 4px 18px rgba(255, 179, 71, 0.13),
+      0 1.5px 8px 0 rgba(25, 118, 210, 0.08);
+    transform: none;
+    animation: none;
+  }
+  .equipe-card:hover .equipe-img {
+    filter: saturate(1.2) contrast(1.1) drop-shadow(0 2px 8px #ffe7a3);
+    box-shadow: 0 2px 12px #ffe7a3;
+  }
+}
+@media (min-width: 769px) {
+  .equipe-list-mobile {
+    display: none;
+  }
+}

@@ -1,3 +1,4 @@
+import React from "react";
 beforeAll(() => {
   window.HTMLElement.prototype.scrollIntoView = function () {};
 });
@@ -21,8 +22,7 @@ import { vi } from "vitest";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { cleanup } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import HomePage from "./HomePage";
-import "@testing-library/jest-dom";
+import HomePage from "../HomePage";
 
 // Mock des sous-composants pour isoler HomePage
 vi.mock("./AProposSection", () => ({
@@ -188,12 +188,10 @@ describe("HomePage", () => {
     }
   });
   it("contient les rôles ARIA et les labels d'accessibilité", () => {
-    // Vérifie le titre principal
-    const heading = screen.getByRole("heading", { name: /CampusConnect/i });
-    expect(heading).toHaveAttribute(
-      "class",
-      expect.stringContaining("herotitle")
-    );
+    // Vérifie le titre principal (h1.heroTitle)
+    const headings = screen.getAllByRole("heading", { name: /CampusConnect/i });
+    const heroHeading = headings.find((h) => h.className.includes("herotitle"));
+    expect(heroHeading).toBeInTheDocument();
 
     // Vérifie le bouton du chatbot avec aria-label
     const chatbotBtn = screen.getByRole("button", {
@@ -225,9 +223,9 @@ describe("HomePage", () => {
   });
 
   it("affiche le titre et le bouton du Hero", () => {
-    expect(
-      screen.getByRole("heading", { name: /CampusConnect/i })
-    ).toBeInTheDocument();
+    const headings = screen.getAllByRole("heading", { name: /CampusConnect/i });
+    const heroHeading = headings.find((h) => h.className.includes("herotitle"));
+    expect(heroHeading).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /Accéder à la plateforme/i })
     ).toBeInTheDocument();

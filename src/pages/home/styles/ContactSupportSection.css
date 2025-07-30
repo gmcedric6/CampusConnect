@@ -92,7 +92,7 @@
   border-radius: 0.7em;
   border: 1.5px solid #b3d1f7;
   font-size: 1em;
-  font-family: inherit;
+  font-family: "Inter", Arial, sans-serif;
   background: #fafdff;
   transition: border 0.2s;
   box-sizing: border-box;
@@ -101,7 +101,14 @@
 .contactquickform input:focus,
 .contactquickform textarea:focus {
   border: 1.5px solid #1976d2;
-  outline: none;
+  outline: 2.5px solid #1976d2;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #e3f2fd;
+}
+.contactquickform-btn:focus {
+  outline: 2.5px solid #1976d2;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #e3f2fd;
 }
 
 .contactquickform textarea {

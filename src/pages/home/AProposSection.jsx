@@ -2,13 +2,15 @@ import React from "react";
 import { motion } from "framer-motion";
 import "./styles/AProposSection.css";
 import aproposImg from "../../assets/image/apropos-illustration.png";
+import SectionContainer from "../../components/SectionContainer";
+import SectionTitle from "../../components/SectionTitle";
 
 function AProposSection() {
   return (
-    <section
+    <SectionContainer
       id="apropos"
       className="apropos fade-in visible"
-      aria-labelledby="apropos-title"
+      aria-labelledby="apropostitle"
     >
       <div className="aproposcontainer apropos2col">
         {/* Colonne gauche : image institutionnelle */}
@@ -33,9 +35,9 @@ function AProposSection() {
           transition={{ duration: 0.8, delay: 0.05, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.5 }}
         >
-          <h2 id="apropostitle" className="apropostitle">
+          <SectionTitle id="apropostitle" className="apropostitle">
             À propos de CampusConnect
-          </h2>
+          </SectionTitle>
           <div className="aproposmission aproposmissionhighlight fade-in-apropos">
             <div className="aproposmissionrow">
               <span className="aproposicon" aria-hidden="true">
@@ -121,7 +123,7 @@ function AProposSection() {
           </div>
         </motion.div>
       </div>
-    </section>
+    </SectionContainer>
   );
 }
 

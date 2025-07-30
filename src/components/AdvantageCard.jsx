@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import useFadeInOnVisible from "../hooks/useFadeInOnVisible";
+import "./styles/AdvantageCard.css";
 
 const AdvantageCard = ({ icon, title, desc, className = "" }) => {
   const cardRef = useRef(null);
