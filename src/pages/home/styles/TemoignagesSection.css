@@ -1,3 +1,23 @@
+@media (max-width: 500px) {
+  .temoignagestitle {
+    font-size: 2.7rem;
+  }
+  .temoignagessubtitle {
+    font-size: 1.6rem;
+  }
+  .temoignagestext {
+    font-size: 1.35rem;
+  }
+}
+.temoignagestitle {
+  font-size: 2.3rem;
+}
+.temoignagessubtitle {
+  font-size: 1.3rem;
+}
+.temoignagestext {
+  font-size: 1.15rem;
+}
 .temoignage-form-error {
   color: #d32f2f;
   background: #ffeaea;

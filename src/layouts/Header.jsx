@@ -33,10 +33,7 @@ const Header = () => {
         <HeaderActions />
       </div>
       {/* Mobile */}
-      <div
-        className="header-mobile"
-        style={{ display: "flex", alignItems: "center" }}
-      >
+      <div className="header-mobile">
         <Logo />
         <button
           className="burger-menu-btn"

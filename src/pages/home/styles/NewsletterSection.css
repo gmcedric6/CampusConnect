@@ -1,3 +1,23 @@
+@media (max-width: 500px) {
+  .newsletter-title {
+    font-size: 2.5rem;
+  }
+  .newsletter-subtitle {
+    font-size: 1.5rem;
+  }
+  .newsletter-text {
+    font-size: 1.3rem;
+  }
+}
+.newsletter-title {
+  font-size: 2.1rem;
+}
+.newsletter-subtitle {
+  font-size: 1.25rem;
+}
+.newsletter-text {
+  font-size: 1.1rem;
+}
 .newsletter-section {
   width: 100%;
   background: linear-gradient(90deg, #eaf6ff 0%, #fafdff 100%);

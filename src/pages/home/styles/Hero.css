@@ -143,25 +143,35 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 4.5rem 1rem 2rem 1rem;
+    padding: 3rem 1rem 0rem 1rem; /* padding-bottom réduit à 0 */
     gap: 2rem;
-    min-height: 100vh;
+    min-height: unset; /* supprime la hauteur forcée sur mobile */
     box-sizing: border-box;
   }
   .herocontent {
     margin-left: 0;
     padding: 1.5rem 0.5rem;
     max-width: 100%;
+    margin-top: 2.5rem; /* espace sous le header */
+  }
+  .herocontentcard {
+    margin-top: 2.5rem; /* espace sous le header */
   }
   .heroimagecontainer {
     margin-top: 1.5rem;
     margin-bottom: 0;
     justify-content: center;
+    margin-left: 5vw; /* pousse l'image vers la droite sur mobile */
   }
   .heroimage {
     max-width: 90vw;
     max-height: 220px;
     margin: 0 auto;
+  }
+  .heroimagecontainer {
+    margin-bottom: 0;
+    justify-content: center;
+    margin-left: 8vw; /* pousse l'image vers la droite sur mobile */
   }
   .herocta {
     width: 90%;
@@ -171,12 +181,10 @@
     padding: 1rem;
   }
   .herotitle {
-    font-size: 1.6rem;
-    margin-bottom: 0.8rem;
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
   }
   .herosubtitle {
-    font-size: 1rem;
-    margin-bottom: 1.2rem;
-    max-width: 95vw;
+    font-size: 1.35rem;
   }
 }

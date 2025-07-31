@@ -1,3 +1,23 @@
+@media (max-width: 500px) {
+  .cta-title {
+    font-size: 2.5rem;
+  }
+  .cta-subtitle {
+    font-size: 1.5rem;
+  }
+  .cta-text {
+    font-size: 1.3rem;
+  }
+}
+.cta-title {
+  font-size: 2.1rem;
+}
+.cta-subtitle {
+  font-size: 1.25rem;
+}
+.cta-text {
+  font-size: 1.1rem;
+}
 .demo-modal-bg {
   position: fixed;
   top: 0;

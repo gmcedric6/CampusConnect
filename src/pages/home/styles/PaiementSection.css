@@ -1,3 +1,23 @@
+@media (max-width: 500px) {
+  .paiement-title {
+    font-size: 2.5rem;
+  }
+  .paiement-subtitle {
+    font-size: 1.5rem;
+  }
+  .paiement-text {
+    font-size: 1.3rem;
+  }
+}
+.paiement-title {
+  font-size: 2.1rem;
+}
+.paiement-subtitle {
+  font-size: 1.25rem;
+}
+.paiement-text {
+  font-size: 1.1rem;
+}
 .paiement {
   width: 100%;
   background: rgba(255, 255, 255, 0.6);

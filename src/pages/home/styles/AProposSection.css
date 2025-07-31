@@ -1,3 +1,6 @@
+.aproposvaleurbadge {
+  display: none !important;
+}
 /* Police fun et éducative sur toute la page d'accueil */
 html,
 body,
@@ -28,6 +31,27 @@ textarea,
 .apropostext10 {
   font-family: "Montserrat", Arial, sans-serif !important;
 }
+@media (max-width: 768px) {
+  .aproposcontainer {
+    padding: 2rem 1rem 1.5rem 1rem;
+    gap: 1.2rem;
+  }
+  .apropostitle {
+    font-size: 1.7rem !important;
+  }
+  .apropostext,
+  .apropostext2,
+  .apropostext3,
+  .apropostext4,
+  .apropostext5,
+  .apropostext6,
+  .apropostext7,
+  .apropostext8,
+  .apropostext9,
+  .apropostext10 {
+    font-size: 1.18rem !important;
+  }
+}
 
 .aproposcontainer {
   display: flex;
@@ -44,6 +68,11 @@ textarea,
   -o-backdrop-filter: blur(8px);
   -ms-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
+}
+@media (max-width: 768px) {
+  .aproposcontainer {
+    flex-direction: column-reverse;
+  }
 }
 
 @media (min-width: 900px) {
@@ -116,7 +145,7 @@ textarea,
 .aproposmissionlabel::after {
   content: "";
   position: absolute;
-  left: 0;
+  font-family: "Quicksand", "Montserrat", Arial, sans-serif !important;
   bottom: -0px;
   width: 0;
   height: 2px;
@@ -295,4 +324,37 @@ textarea,
   padding: 0rem 1.5rem;
   opacity: 9;
   animation: fadeInMission 1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+}
+
+/* Style Baloo 2 uniquement sur Chrome */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  html,
+  body,
+  section,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  a,
+  button,
+  label,
+  input,
+  textarea,
+  .apropostitle,
+  .apropostext,
+  .apropostext2,
+  .apropostext3,
+  .apropostext4,
+  .apropostext5,
+  .apropostext6,
+  .apropostext7,
+  .apropostext8,
+  .apropostext9,
+  .apropostext10 {
+    font-family: "Baloo 2", "Montserrat", Arial, sans-serif !important;
+  }
 }

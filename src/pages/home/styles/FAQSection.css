@@ -1,3 +1,23 @@
+@media (max-width: 500px) {
+  .faq-title {
+    font-size: 2.5rem;
+  }
+  .faq-subtitle {
+    font-size: 1.5rem;
+  }
+  .faq-text {
+    font-size: 1.3rem;
+  }
+}
+.faq-title {
+  font-size: 2.1rem;
+}
+.faq-subtitle {
+  font-size: 1.25rem;
+}
+.faq-text {
+  font-size: 1.1rem;
+}
 /* Réponse ouverte FAQ */
 .faqanswer-open {
   overflow: hidden;

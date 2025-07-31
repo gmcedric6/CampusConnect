@@ -1,3 +1,23 @@
+@media (max-width: 500px) {
+  .avantage-title {
+    font-size: 2.5rem;
+  }
+  .avantage-subtitle {
+    font-size: 1.5rem;
+  }
+  .avantage-text {
+    font-size: 1.3rem;
+  }
+}
+.avantage-title {
+  font-size: 2.1rem;
+}
+.avantage-subtitle {
+  font-size: 1.25rem;
+}
+.avantage-text {
+  font-size: 1.1rem;
+}
 /* Centrage du sous-titre */
 .avantagessubtitle {
   text-align: center;

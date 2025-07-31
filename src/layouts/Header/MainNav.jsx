@@ -4,8 +4,17 @@ import HeaderLink from "./HeaderLink";
 
 const MainNav = ({ menuOpen }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  // Détection desktop/mobile
+  const isMobile =
+    typeof window !== "undefined" ? window.innerWidth <= 768 : false;
   const handleDropdownToggle = () => setDropdownOpen((open) => !open);
   const handleDropdownClose = () => setDropdownOpen(false);
+  const handleDropdownMouseEnter = () => {
+    if (!isMobile) setDropdownOpen(true);
+  };
+  const handleDropdownMouseLeave = () => {
+    if (!isMobile) setDropdownOpen(false);
+  };
   return (
     <nav className="headernav" aria-label="Navigation principale">
       <ul className={`headermenu${menuOpen ? " open" : ""}`}>
@@ -39,7 +48,11 @@ const MainNav = ({ menuOpen }) => {
             Témoignages
           </HeaderLink>
         </li>
-        <li className={`has-dropdown${dropdownOpen ? " open" : ""}`}>
+        <li
+          className={`has-dropdown${dropdownOpen ? " open" : ""}`}
+          onMouseEnter={handleDropdownMouseEnter}
+          onMouseLeave={handleDropdownMouseLeave}
+        >
           <button
             className="headerlink dropdown-toggle"
             aria-haspopup="true"
@@ -47,46 +60,65 @@ const MainNav = ({ menuOpen }) => {
             tabIndex={0}
             aria-label="Afficher plus de sections"
             style={{ display: "flex", alignItems: "center", gap: "0.5em" }}
-            onClick={handleDropdownToggle}
+            onClick={isMobile ? handleDropdownToggle : undefined}
           >
             Plus
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#1976d2"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              style={{ marginLeft: "4px" }}
-            >
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
+            {menuOpen && (
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#1976d2"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                style={{ marginLeft: "4px" }}
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            )}
           </button>
           <AnimatePresence>
             {dropdownOpen && (
               <motion.ul
-                className="dropdown dropdown-fullscreen"
+                className={`dropdown${isMobile ? " dropdown-fullscreen" : ""}`}
                 initial={{ y: "100%", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: "100%", opacity: 0 }}
                 transition={{ duration: 0.35, ease: [0.4, 1.3, 0.6, 1] }}
-                style={{
-                  position: "fixed",
-                  left: 0,
-                  bottom: 0,
-                  width: "100vw",
-                  height: "100vh",
-                  background: "rgba(255,255,255,0.98)",
-                  zIndex: 9999,
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  padding: "0",
-                  margin: 0,
-                }}
+                style={
+                  isMobile
+                    ? {
+                        position: "fixed",
+                        left: 0,
+                        bottom: 0,
+                        width: "100vw",
+                        height: "100vh",
+                        background: "rgba(255,255,255,0.98)",
+                        zIndex: 9999,
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        padding: "0",
+                        margin: 0,
+                      }
+                    : {
+                        position: "absolute",
+                        top: "calc(100% + 10px)",
+                        left: "-80px",
+                        minWidth: "120px",
+                        background: "#fff",
+                        boxShadow: "0 8px 32px rgba(25, 118, 210, 0.18)",
+                        borderRadius: "8px",
+                        zIndex: 9999,
+                        display: "flex",
+                        flexDirection: "column",
+                        padding: "1em 0.5em",
+                        margin: 0,
+                      }
+                }
                 onClick={handleDropdownClose}
               >
                 <li>
@@ -150,21 +182,23 @@ const MainNav = ({ menuOpen }) => {
                     Call to Action
                   </HeaderLink>
                 </li>
-                <button
-                  style={{
-                    marginTop: "2em",
-                    fontSize: "1.2em",
-                    background: "#1976d2",
-                    color: "#fff",
-                    border: "none",
-                    borderRadius: "8px",
-                    padding: "0.7em 2em",
-                    cursor: "pointer",
-                  }}
-                  onClick={handleDropdownClose}
-                >
-                  Fermer
-                </button>
+                {isMobile && (
+                  <button
+                    style={{
+                      marginTop: "2em",
+                      fontSize: "1.2em",
+                      background: "#1976d2",
+                      color: "#fff",
+                      border: "none",
+                      borderRadius: "8px",
+                      padding: "0.7em 2em",
+                      cursor: "pointer",
+                    }}
+                    onClick={handleDropdownClose}
+                  >
+                    Fermer
+                  </button>
+                )}
               </motion.ul>
             )}
           </AnimatePresence>

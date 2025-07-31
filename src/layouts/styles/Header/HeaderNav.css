@@ -1,8 +1,11 @@
-.headermenu li {
-  margin-bottom: 2.2rem;
-}
-.headermenu li:last-child {
-  margin-bottom: 0;
+/* margin-bottom uniquement sur mobile */
+@media (max-width: 768px) {
+  .headermenu li {
+    margin-bottom: 2.2rem;
+  }
+  .headermenu li:last-child {
+    margin-bottom: 0;
+  }
 }
 /* Styles du menu principal */
 .headernav {

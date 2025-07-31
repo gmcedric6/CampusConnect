@@ -113,11 +113,11 @@
 }
 @media (max-width: 768px) {
   .equipe-title {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.7rem;
+    margin-bottom: 0.7rem;
   }
   .equipe-desc {
-    font-size: 0.98rem;
+    font-size: 1.18rem;
     margin-bottom: 1.2rem;
   }
   .equipe-name {
@@ -127,11 +127,11 @@
     font-size: 0.9rem;
   }
   .equipe-section {
-    min-height: 100vh;
+    min-height: unset; /* supprime la hauteur forcée */
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    padding: 2.5rem 1rem 2rem 1rem;
+    padding: 0.8rem 1rem 2rem 1rem; /* padding-top légèrement réduit */
     box-sizing: border-box;
   }
   .equipe-container {

@@ -5,14 +5,6 @@ const HeaderActions = () => (
     className="headeractions"
     style={{ display: "flex", alignItems: "center", gap: "1.2em" }}
   >
-    {/* Bouton desktop */}
-    <Link
-      to="/login"
-      className="btn btnsecondary btn-login-desktop"
-      aria-label="Se connecter à CampusConnect"
-    >
-      Se connecter
-    </Link>
     {/* Bouton mobile avec icône cadenas */}
     <div
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
@@ -46,9 +38,19 @@ const HeaderActions = () => (
           <path d="M7 11V7a5 5 0 0 1 10 0v4" />
         </svg>
       </Link>
-      <span style={{ fontSize: "0.75em", color: "#666", marginTop: "2px" }}>
-        <span className="btn-login-mobile-label">Se connecter</span>
-      </span>
+      <Link
+        to="/login"
+        className="btn-login-mobile-label"
+        aria-label="Se connecter à CampusConnect"
+        style={{
+          fontSize: "0.75em",
+          color: "#666",
+          marginTop: "2px",
+          cursor: "pointer",
+        }}
+      >
+        Se connecter
+      </Link>
     </div>
   </div>
 );
