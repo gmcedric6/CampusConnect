@@ -7,7 +7,7 @@ export const chiffres = [
   },
   {
     end: 30,
-    label: "Établissements partenaires",
+    label: "Partenaires",
     separator: " ",
     suffix: "",
   },

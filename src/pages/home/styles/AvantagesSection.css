@@ -1,3 +1,45 @@
+/* SwiperJS custom pour avantages */
+.avantages-swiper {
+  width: 100%;
+  padding-bottom: 2.5rem;
+  box-sizing: border-box;
+}
+
+@media (max-width: 700px) {
+  .avantagesgrid {
+    display: none !important;
+  }
+  .avantages-swiper {
+    display: block;
+  }
+}
+
+@media (min-width: 701px) {
+  .avantages-swiper {
+    display: none;
+  }
+}
+
+/* Pagination points Swiper */
+.avantages-swiper .swiper-pagination-bullets {
+  bottom: 0.5rem !important;
+  text-align: center;
+}
+.avantages-swiper .swiper-pagination-bullet {
+  background: #1976d2;
+  opacity: 0.3;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px !important;
+  transition: opacity 0.2s, background 0.2s;
+}
+.avantages-swiper .swiper-pagination-bullet-active {
+  background: #1976d2;
+  opacity: 1;
+  width: 14px;
+  height: 10px;
+  border-radius: 8px;
+}
 @media (max-width: 500px) {
   .avantage-title {
     font-size: 2.5rem;
@@ -79,19 +121,25 @@
   }
 }
 
+/* Décalage visuel vers le bas */
 .avantagesitem {
+  margin: 2.5rem auto 0 auto;
   background: #ffffff;
-  border-radius: 2rem;
+  border-radius: 1.2rem;
   box-shadow: 0 8px 36px rgba(72, 73, 75, 0.25);
-  padding: 1rem 2.5rem 1rem 2.5rem;
+  padding: 0.7rem 1.2rem 0.7rem 1.2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   transition: box-shadow 0.35s ease, transform 0.35s ease, background 0.35s ease,
     opacity 0.7s, filter 0.22s;
   opacity: 0;
   transform: translateY(30px);
   filter: none;
+  min-height: 120px;
+  max-width: 200px;
 }
 .avantagesitem:hover,
 .avantagesitem:focus {
@@ -153,8 +201,10 @@
     gap: 1.2rem 0.7rem;
   }
   .avantagesitem {
-    padding: 1.3rem 0.7rem 1.1rem 0.7rem;
-    min-height: 160px;
+    margin: 2.5rem auto 0 auto;
+    padding: 0.7rem 0.5rem 0.7rem 0.5rem;
+    min-height: 100px;
+    max-width: 70vw;
   }
   .avantagesicon-wrapper {
     width: 44px;

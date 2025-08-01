@@ -1,3 +1,68 @@
+@media (max-width: 700px) {
+  .temoignage-form {
+    max-width: 320px !important;
+    width: 90vw !important;
+    padding: 1.2em 0.7em 1em 0.7em !important;
+    margin: 4vh auto 0 auto !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+}
+@media (max-width: 700px) {
+  .temoignage-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    min-height: 40vh;
+    width: 90vw;
+    max-width: 320px;
+    padding: 0.5rem 0.5rem;
+  }
+}
+@media (max-width: 700px) {
+  .temoignagecard:hover {
+    background: inherit !important;
+    transform: none !important;
+    box-shadow: none !important;
+    cursor: default !important;
+  }
+}
+/* Centrage du swiper et de la carte sur mobile */
+@media (max-width: 700px) {
+  .temoignages-swiper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 40vh;
+    height: 40vh;
+    box-sizing: border-box;
+  }
+  .temoignages-swiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .temoignagescard-motion {
+    margin: 0 8px 0 0 !important;
+    max-width: 260px;
+    min-height: 180px;
+    height: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .temoignages-arrow {
+    display: none !important;
+  }
+}
 @media (max-width: 500px) {
   .temoignagestitle {
     font-size: 2.7rem;

@@ -36,8 +36,15 @@ textarea,
     padding: 2rem 1rem 1.5rem 1rem;
     gap: 1.2rem;
   }
+  .aproposcontentcol {
+    align-items: center;
+    text-align: center;
+  }
   .apropostitle {
     font-size: 1.7rem !important;
+    white-space: nowrap;
+    text-align: center;
+    margin-left: -3vw;
   }
   .apropostext,
   .apropostext2,
@@ -72,6 +79,7 @@ textarea,
 @media (max-width: 768px) {
   .aproposcontainer {
     flex-direction: column-reverse;
+    margin-top: -6rem;
   }
 }
 
@@ -165,7 +173,7 @@ textarea,
   color: #213547;
   line-height: 1.7;
   font-weight: 500;
-  text-align: justify;
+  text-align: left;
   opacity: 9;
   transform: translateY(16px);
   animation: fadeInMission 1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
@@ -316,7 +324,7 @@ textarea,
   color: #213547;
   line-height: 1.7;
   font-weight: 500;
-  text-align: justify;
+  text-align: left;
   background: rgba(246, 250, 253, 0.7);
   -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);

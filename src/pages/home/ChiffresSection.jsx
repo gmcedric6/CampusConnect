@@ -1,25 +1,41 @@
-import React from "react";
-import { useAnimatedCounter } from "../../hooks/useAnimatedCounter";
+import React, { useState } from "react";
 import CountUp from "react-countup";
 import "./styles/ChiffresSection.css";
 import SectionContainer from "../../components/SectionContainer";
 import SectionTitle from "../../components/SectionTitle";
 import SectionGrid from "../../components/SectionGrid";
 import { chiffres } from "../../data/chiffres";
-import { useState } from "react";
 import { motion } from "framer-motion";
 import contentGif from "../../assets/gif/content.gif";
 import etudiantGif from "../../assets/gif/Etudiant.gif";
 import etablissementsGif from "../../assets/gif/Etablissements.gif";
 
 const ChiffresSection = () => {
-  const { countKey, relaunch } = useAnimatedCounter();
+  // Un tableau d'états pour chaque carte : true si la carte est visible
+  const [visibleCards, setVisibleCards] = useState(
+    Array(chiffres.length).fill(false)
+  );
+
+  // Handler appelé quand une carte entre dans la vue
+  const handleInView = (idx) => {
+    setVisibleCards((prev) => {
+      const updated = [...prev];
+      updated[idx] = true;
+      return updated;
+    });
+  };
+
+  // Handler appelé quand une carte sort de la vue
+  const handleOutView = (idx) => {
+    setVisibleCards((prev) => {
+      const updated = [...prev];
+      updated[idx] = false;
+      return updated;
+    });
+  };
+
   return (
-    <SectionContainer
-      id="chiffres"
-      className="chiffressection"
-      onViewportEnter={relaunch}
-    >
+    <SectionContainer id="chiffres" className="chiffressection">
       <SectionTitle className="chiffrestitle">
         Notre impact en chiffres
       </SectionTitle>
@@ -31,10 +47,8 @@ const ChiffresSection = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: idx * 0.13, ease: "easeInOut" }}
-            viewport={{ once: true, amount: 0.5 }}
-            whileHover={{
-              scale: 1.04,
-            }}
+            viewport={{ once: false, amount: 0.5 }}
+            whileHover={{ scale: 1.04 }}
             style={{
               cursor: "pointer",
               backgroundColor: "#fff",
@@ -43,6 +57,8 @@ const ChiffresSection = () => {
             tabIndex={0}
             aria-label={c.label + " : " + c.end + (c.suffix || "")}
             role="group"
+            onViewportEnter={() => handleInView(idx)}
+            onViewportLeave={() => handleOutView(idx)}
           >
             {idx === 0 && (
               <img
@@ -84,14 +100,17 @@ const ChiffresSection = () => {
               />
             )}
             <span className="chiffrevalue">
-              <CountUp
-                key={countKey + "-" + idx}
-                end={c.end}
-                duration={2.2}
-                separator={c.separator}
-                suffix={c.suffix}
-                start={0}
-              />
+              {visibleCards[idx] ? (
+                <CountUp
+                  end={c.end}
+                  duration={2.2}
+                  separator={c.separator}
+                  suffix={c.suffix}
+                  start={0}
+                />
+              ) : (
+                0
+              )}
             </span>
             <span className="chiffrelabel">{c.label}</span>
           </motion.div>

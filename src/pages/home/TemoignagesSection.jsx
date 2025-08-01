@@ -1,7 +1,10 @@
 // TemoignagesSection.jsx
 import React, { useState } from "react";
-import { useCarousel } from "../../hooks/useCarousel";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 import "./styles/TemoignagesSection.css";
 import TestimonialCard from "../../components/TestimonialCard";
 import SectionContainer from "../../components/SectionContainer";
@@ -20,12 +23,6 @@ function TemoignagesSection() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const {
-    currentIdx,
-    setCurrentIdx,
-    next: goToNext,
-    prev: goToPrev,
-  } = useCarousel(testimonials.length);
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -43,7 +40,6 @@ function TemoignagesSection() {
     setLoading(true);
     try {
       await sendTestimonial(formData);
-      // Ajoute le témoignage en haut de la liste (avatar par défaut)
       setTestimonials([
         {
           ...formData,
@@ -57,66 +53,55 @@ function TemoignagesSection() {
       setShowForm(false);
       setFormData({ name: "", role: "", quote: "" });
       setTimeout(() => setSubmitted(false), 3000);
-      setCurrentIdx(0); // Affiche le nouveau témoignage
     } catch {
       setError("Erreur lors de l'envoi. Veuillez réessayer.");
     }
     setLoading(false);
   };
+  // Détection mobile JS
+  const isMobile = window.matchMedia("(max-width: 700px)").matches;
   return (
     <SectionContainer id="temoignages" className="temoignages fade-in">
       <SectionTitle className="temoignagestitle">
         Ils nous font confiance
       </SectionTitle>
-      <SectionGrid className="temoignagesgrid temoignagesgrid-styled">
-        <button
-          aria-label="Précédent"
-          onClick={goToPrev}
-          className="temoignages-arrow temoignages-arrow-left"
+      {isMobile ? (
+        <Swiper
+          modules={[Pagination]}
+          pagination={{ clickable: true, dynamicBullets: true }}
+          spaceBetween={24}
+          slidesPerView={1}
+          className="temoignages-swiper"
         >
-          &#8592;
-        </button>
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentIdx}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.7 }}
-            className="temoignagescard-motion"
-          >
-            <TestimonialCard
-              quote={testimonials[currentIdx].quote}
-              name={testimonials[currentIdx].name}
-              role={testimonials[currentIdx].role}
-              avatar={testimonials[currentIdx].avatar}
-              className="temoignagecard hoverscale"
-            />
-            {/* Pagination sous la carte */}
-            <div className="temoignages-pagination">
-              {testimonials.map((_, i) => (
-                <button
-                  key={i}
-                  className={
-                    "temoignages-pagination-dot" +
-                    (i === currentIdx ? " active" : "")
-                  }
-                  aria-label={`Aller au témoignage ${i + 1}`}
-                  onClick={() => setCurrentIdx(i)}
-                  type="button"
+          {testimonials.map((t, idx) => (
+            <SwiperSlide key={idx}>
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{
+                  duration: 0.6,
+                  delay: idx * 0.15,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: true, amount: 0.5 }}
+                className="temoignagescard-motion"
+              >
+                <TestimonialCard
+                  quote={t.quote}
+                  name={t.name}
+                  role={t.role}
+                  avatar={t.avatar}
+                  className="temoignagecard hoverscale"
                 />
-              ))}
-            </div>
-          </motion.div>
-        </AnimatePresence>
-        <button
-          aria-label="Suivant"
-          onClick={goToNext}
-          className="temoignages-arrow temoignages-arrow-right"
-        >
-          &#8594;
-        </button>
-      </SectionGrid>
+              </motion.div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      ) : (
+        <SectionGrid className="temoignagesgrid temoignagesgrid-styled">
+          {/* TODO: Remettre le carrousel desktop ici si besoin */}
+        </SectionGrid>
+      )}
       {showForm && (
         <>
           <p className="temoignage-form-info">
