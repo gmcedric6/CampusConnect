@@ -1,0 +1,11 @@
+.burger-menu-btn {
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+  padding: 0.5em;
+  border: none;
+  transition: background 0.2s;
+}
+.burger-menu-btn:active, .burger-menu-btn:focus {
+  background: #e3f2fd;
+}
